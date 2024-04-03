@@ -1,0 +1,4 @@
+Problem definition:
+we build a service that has to grab CWV metrics from any domain and track it track it to statistics.
+data sholud be accesible via API per domain as values for last 1h, 3h, 24h
+it may be able to dump data to csv file
