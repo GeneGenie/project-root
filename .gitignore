@@ -1,2 +1,4 @@
 /.idea/
+/.env.local
 /LearnBuild.iml
+/node_modules/

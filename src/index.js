@@ -8,7 +8,7 @@ function sendToAnalytics(metric) {
     const body = JSON.stringify(metric);
 
     // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
-    (navigator.sendBeacon && navigator.sendBeacon('http://localhost:3001/analytics', body)) ||
+    (navigator.sendBeacon && navigator.sendBeacon(process.env.REPORT_URL, body)) ||
     fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 function wvEventCallback(metric){
