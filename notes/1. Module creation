@@ -2,3 +2,12 @@ Problem definition:
 we build a service that has to grab CWV metrics from any domain and track it track it to statistics.
 data sholud be accesible via API per domain as values for last 1h, 3h, 24h
 it may be able to dump data to csv file
+
+
+
+1. Create library to grab data.
+2. run init project
+3. learn about metrics lib https://github.com/GoogleChrome/web-vitals?tab=readme-ov-file#from-npm
+4. support two versions of attributed and not attributed metrics
+5. try to use cdn dependency but track unavalability and fallback to custom build
+
