@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "NODE_ENV=prod rollup -c",
     "dev:be": "node server/index.js",
     "dev:fe": "rollup -c -w",
     "dev": "run-p dev:be dev:fe"
