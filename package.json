@@ -11,7 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "rollup": "^4.14.0",
     "rollup-plugin-serve": "^1.1.1"
+  },
+  "dependencies": {
+    "web-vitals": "^3.5.2"
   }
 }

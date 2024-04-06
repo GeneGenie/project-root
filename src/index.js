@@ -1,8 +1,4 @@
-import {
-    onCLS,
-    onFID,
-    onLCP,
-} from 'https://unpkg.com/web-vitals@3/dist/web-vitals.js?module';
+import {onLCP, onFID, onCLS} from 'web-vitals';
 
 onCLS(console.log);
 onFID(console.log);
