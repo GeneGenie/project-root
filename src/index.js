@@ -1,6 +1,6 @@
 import {onLCP, onFID, onCLS} from 'web-vitals';
 
-const opts = {reportAllChanges: true};
+const opts = {reportAllChanges: false};
 
 function sendToAnalytics(metric) {
     // Replace with whatever serialization method you prefer.
@@ -8,7 +8,7 @@ function sendToAnalytics(metric) {
     const body = JSON.stringify(metric);
 
     // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
-    (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
+    (navigator.sendBeacon && navigator.sendBeacon('http://localhost:3001/analytics', body)) ||
     fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 function wvEventCallback(metric){
