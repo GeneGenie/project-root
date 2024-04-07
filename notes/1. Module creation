@@ -12,3 +12,8 @@ it may be able to dump data to csv file
 5. try to use cdn dependency but track unavalability and fallback to custom build
 
 именно поэтому во многих библиотеках тяжело дебажить.
+
+
+
+
+DX!! решаем проблему по отслеживанию логов. неправильный трейс

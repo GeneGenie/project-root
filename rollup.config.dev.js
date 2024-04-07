@@ -4,6 +4,11 @@ import livereload from 'rollup-plugin-livereload'
 
 export default {
     ...rollupConfig,
+    output: {
+       ...rollupConfig.output,
+        sourcemap: 'inline'
+    },
+    sourcemap:true,
     plugins: [
         ...rollupConfig.plugins,
         livereload(),
