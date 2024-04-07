@@ -1,0 +1,10 @@
+{
+  "extends": "standard",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "indent": [ "error", 4 ],
+    "semi": [ "error", "always" ]
+  }
+}
