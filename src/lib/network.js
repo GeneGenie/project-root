@@ -1,5 +1,5 @@
 import {Log} from './logger.js'
-const log = (...args)=> Log('[network]',...args)
+const log = (...args)=> console.log('[network]',...args)
 // as you know, there is SOME flexibility in this
 
 export function safePost(url, body) {
@@ -10,6 +10,7 @@ export function safePost(url, body) {
         // todo get back here and disallow ignored promises;
         mayFail(fetch(url, { body, method: 'POST', keepalive: true }))
     }
+    log('[network]', 'after send');
 }
 
 function mayFail(promise) {
