@@ -3,6 +3,14 @@ export function safePost(url, body) {
     if (navigator.sendBeacon) {
         navigator.sendBeacon(url, body)
     } else {
-        fetch(url, { body, method: 'POST', keepalive: true });
+        // todo get back here and disallow ignored promises;
+        mayFail(fetch(url, { body, method: 'POST', keepalive: true }))
     }
+}
+
+function mayFail(promise) {
+    promise
+        .catch(e => {
+            console.warn('[network]', 'failed', e);
+        })
 }
