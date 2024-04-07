@@ -1,9 +1,10 @@
+import { safePost } from "./network.js";
+
 function sendToAnalytics(metric) {
     const body = JSON.stringify(metric);
     console.log('[Consumer]', 'consumed metric',metric)
     const url  = process.env.REPORT_URL;
-    (navigator.sendBeacon && navigator.sendBeacon(url, body)) ||
-    fetch(url, {body, method: 'POST', keepalive: true});
+    safePost(url,body);
 }
 
 export function consumeMetric(metrics){
