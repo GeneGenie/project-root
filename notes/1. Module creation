@@ -25,3 +25,13 @@ https://developer.mozilla.org/en-US/docs/Web/API/console/trace_static
 https://bugfender.com/blog/javascript-console-log/
 
 
+
+
+Linters  Prettier vs Eslint
+https://blog.logrocket.com/linting-typescript-eslint-prettier/#what-linting
+https://eslint.org/docs/latest/use/getting-started
+
+
+npm init @eslint/config
+"dev:lint": "eslint src/**"
+npm run dev:lint --fix
