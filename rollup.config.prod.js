@@ -8,9 +8,8 @@ export default {
         ...rollupConfig.plugins,
         terser(),
         visualizer({
-            open:true,
-            template: 'treemap',
-            filename: 'public/dist/stats.html',
+            template: 'raw-data',
+            filename: 'reports/size.json',
             gzipSize:true
         })
     ]

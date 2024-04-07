@@ -1,0 +1,228 @@
+{
+  "version": 2,
+  "tree": {
+    "name": "root",
+    "children": [
+      {
+        "name": "learnbuild.js",
+        "children": [
+          {
+            "name": "node_modules/web-vitals/dist/web-vitals.js",
+            "uid": "f5230118-1"
+          },
+          {
+            "name": "src",
+            "children": [
+              {
+                "name": "lib",
+                "children": [
+                  {
+                    "uid": "f5230118-3",
+                    "name": "logger.js"
+                  },
+                  {
+                    "uid": "f5230118-5",
+                    "name": "metricsProvider.js"
+                  },
+                  {
+                    "uid": "f5230118-7",
+                    "name": "network.js"
+                  },
+                  {
+                    "uid": "f5230118-9",
+                    "name": "metricsConsumer.js"
+                  }
+                ]
+              },
+              {
+                "name": "modules/metrics.js",
+                "uid": "f5230118-11"
+              },
+              {
+                "uid": "f5230118-13",
+                "name": "index.js"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "isRoot": true
+  },
+  "nodeParts": {
+    "f5230118-1": {
+      "renderedLength": 4924,
+      "gzipLength": 1826,
+      "brotliLength": 0,
+      "metaUid": "f5230118-0"
+    },
+    "f5230118-3": {
+      "renderedLength": 800,
+      "gzipLength": 425,
+      "brotliLength": 0,
+      "metaUid": "f5230118-2"
+    },
+    "f5230118-5": {
+      "renderedLength": 326,
+      "gzipLength": 178,
+      "brotliLength": 0,
+      "metaUid": "f5230118-4"
+    },
+    "f5230118-7": {
+      "renderedLength": 495,
+      "gzipLength": 280,
+      "brotliLength": 0,
+      "metaUid": "f5230118-6"
+    },
+    "f5230118-9": {
+      "renderedLength": 283,
+      "gzipLength": 189,
+      "brotliLength": 0,
+      "metaUid": "f5230118-8"
+    },
+    "f5230118-11": {
+      "renderedLength": 98,
+      "gzipLength": 88,
+      "brotliLength": 0,
+      "metaUid": "f5230118-10"
+    },
+    "f5230118-13": {
+      "renderedLength": 55,
+      "gzipLength": 65,
+      "brotliLength": 0,
+      "metaUid": "f5230118-12"
+    }
+  },
+  "nodeMetas": {
+    "f5230118-0": {
+      "id": "/node_modules/web-vitals/dist/web-vitals.js",
+      "moduleParts": {
+        "learnbuild.js": "f5230118-1"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "f5230118-4"
+        }
+      ]
+    },
+    "f5230118-2": {
+      "id": "/src/lib/logger.js",
+      "moduleParts": {
+        "learnbuild.js": "f5230118-3"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "f5230118-10"
+        },
+        {
+          "uid": "f5230118-4"
+        },
+        {
+          "uid": "f5230118-8"
+        },
+        {
+          "uid": "f5230118-6"
+        }
+      ]
+    },
+    "f5230118-4": {
+      "id": "/src/lib/metricsProvider.js",
+      "moduleParts": {
+        "learnbuild.js": "f5230118-5"
+      },
+      "imported": [
+        {
+          "uid": "f5230118-0"
+        },
+        {
+          "uid": "f5230118-2"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "f5230118-10"
+        }
+      ]
+    },
+    "f5230118-6": {
+      "id": "/src/lib/network.js",
+      "moduleParts": {
+        "learnbuild.js": "f5230118-7"
+      },
+      "imported": [
+        {
+          "uid": "f5230118-2"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "f5230118-8"
+        }
+      ]
+    },
+    "f5230118-8": {
+      "id": "/src/lib/metricsConsumer.js",
+      "moduleParts": {
+        "learnbuild.js": "f5230118-9"
+      },
+      "imported": [
+        {
+          "uid": "f5230118-6"
+        },
+        {
+          "uid": "f5230118-2"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "f5230118-10"
+        }
+      ]
+    },
+    "f5230118-10": {
+      "id": "/src/modules/metrics.js",
+      "moduleParts": {
+        "learnbuild.js": "f5230118-11"
+      },
+      "imported": [
+        {
+          "uid": "f5230118-4"
+        },
+        {
+          "uid": "f5230118-8"
+        },
+        {
+          "uid": "f5230118-2"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "f5230118-12"
+        }
+      ]
+    },
+    "f5230118-12": {
+      "id": "/src/index.js",
+      "moduleParts": {
+        "learnbuild.js": "f5230118-13"
+      },
+      "imported": [
+        {
+          "uid": "f5230118-10"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    }
+  },
+  "env": {
+    "rollup": "3.29.4"
+  },
+  "options": {
+    "gzip": true,
+    "brotli": false,
+    "sourcemap": false
+  }
+}
