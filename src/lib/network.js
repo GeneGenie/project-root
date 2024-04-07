@@ -1,8 +1,8 @@
-import {Logger} from './logger.js'
+import { getLogger, Logger } from './logger.js'
 // exception here
 
-const logger = new Logger('network');
-const log = logger.log.bind(logger)
+const logger = getLogger('network');
+const log = logger.log
 
 // const log = (...args)=> {
 //     // so trace kinda works but i am consirened about DX and browser performance so lets do a trade
