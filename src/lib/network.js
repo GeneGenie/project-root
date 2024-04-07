@@ -1,5 +1,9 @@
+import {Log} from './logger.js'
+const log = (...args)=> Log('[network]',...args)
+// as you know, there is SOME flexibility in this
+
 export function safePost(url, body) {
-    console.log('[network]', 'send request to', url);
+    log('[network]', 'send request to', url);
     if (navigator.sendBeacon) {
         navigator.sendBeacon(url, body)
     } else {
@@ -11,6 +15,6 @@ export function safePost(url, body) {
 function mayFail(promise) {
     promise
         .catch(e => {
-            console.warn('[network]', 'failed', e);
+            log('[network]', 'failed', e);
         })
 }

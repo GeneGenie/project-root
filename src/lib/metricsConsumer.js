@@ -1,8 +1,9 @@
 import { safePost } from "./network.js";
+import { Log } from "./logger.js";
 
 function sendToAnalytics(metric) {
     const body = JSON.stringify(metric);
-    console.log('[Consumer]', 'consumed metric',metric)
+    Log('[Consumer]', 'consumed metric',metric)
     const url  = process.env.REPORT_URL;
     safePost(url,body);
 }
