@@ -11,6 +11,12 @@ const __dirname = path.dirname(__filename)
 const compat = new FlatCompat({ baseDirectory: __dirname, recommendedConfig: pluginJs.configs.recommended })
 
 export default [
-  { languageOptions: { globals: globals.browser } },
-  ...compat.extends('standard')
+
+    ...compat.extends('standard'),
+    {
+        languageOptions: { globals: globals.browser },
+        rules: {
+            "indent": ["error", 4]
+        }
+    },
 ]
