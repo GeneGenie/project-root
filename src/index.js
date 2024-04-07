@@ -1,7 +1,7 @@
-import { initMetrics } from './modules/metrics.js'
+import { initMetrics } from './modules/metrics.js';
 
 function main () {
-    initMetrics()
+    initMetrics();
 }
 
-main()
+main();

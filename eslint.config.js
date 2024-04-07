@@ -16,7 +16,8 @@ export default [
     {
         languageOptions: { globals: globals.browser },
         rules: {
-            "indent": ["error", 4]
+            "indent": ["error", 4],
+            "semi": ["error", 'always']
         }
     },
 ]
