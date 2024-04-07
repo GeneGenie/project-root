@@ -11,3 +11,4 @@ it may be able to dump data to csv file
 4. support two versions of attributed and not attributed metrics
 5. try to use cdn dependency but track unavalability and fallback to custom build
 
+именно поэтому во многих библиотеках тяжело дебажить.
