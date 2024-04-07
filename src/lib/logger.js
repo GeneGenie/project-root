@@ -1,4 +1,3 @@
-const log = console.log.bind(window.console);
 // this starts from capital only to avoid IDE auto fillilng as console.log"
 export function Log(...args) {
     // discussion about building in logger
@@ -6,14 +5,15 @@ export function Log(...args) {
     // discussuon about ree shaking removal and lazy loading lib itself until required
     // todo   considering possible performance issue -> develop lazy LS poller.
     if (localStorage.libdebug === '1') {
-        log(...args)
+        console.log(...args)
     }
 }
 
-class Logger{
-  constructor({log}) {
-      this._log = log;
-  }
+export class Logger {
+    constructor(name) {
+        // this._log = log;
+        this._name = name;
+    }
 
     log(...args) {
         // discussion about building in logger
@@ -21,15 +21,16 @@ class Logger{
         // discussuon about ree shaking removal and lazy loading lib itself until required
         // todo   considering possible performance issue -> develop lazy LS poller.
         if (localStorage.libdebug === '1') {
-            log(...args)
+            console.log(this._name, ...args)
         }
     }
 }
 
 
-export function getLogger(){
+export function getLogger() {
     return new Logger({
         log
     });
 }
+
 // use console.table for logs

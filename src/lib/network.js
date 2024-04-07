@@ -1,16 +1,15 @@
-import {Log} from './logger.js'
+import {Logger} from './logger.js'
+// exception here
+const log = (new Logger('network')).log
 
-
-const log = (...args)=> {
-    // so trace kinda works but i am consirened about DX and browser performance so lets do a trade
-    if(true){
-        console.log('[network]',...args)
-    }else{
-        console.trace('[network]',...args)
-    }
-
-
-}
+// const log = (...args)=> {
+//     // so trace kinda works but i am consirened about DX and browser performance so lets do a trade
+//     if(true){
+//         console.log.apply(console,['[network]',...args])
+//     }else{
+//         console.trace('[network]',...args)
+//     }
+// }
 // as you know, there is SOME flexibility in this
 
 export function safePost(url, body) {
