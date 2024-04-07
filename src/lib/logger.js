@@ -9,10 +9,10 @@ export function Log(...args) {
     }
 }
 
-export function getLogger(name) {
+export function getLogger(name, opts) {
     // now much better
   return {
-      log: Log.bind(name)
+      log:(...args) =>  Log(`[${name}]`,...args)
   }
 }
 
