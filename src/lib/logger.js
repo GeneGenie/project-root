@@ -1,5 +1,5 @@
 const log = console.log.bind(window.console);
-
+// this starts from capital only to avoid IDE auto fillilng as console.log"
 export function Log(...args) {
     // discussion about building in logger
     // discussion about localstorage performance

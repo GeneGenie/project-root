@@ -17,3 +17,5 @@ it may be able to dump data to csv file
 
 
 DX!! решаем проблему по отслеживанию логов. неправильный трейс
+https://developer.mozilla.org/en-US/docs/Web/API/console/log_static
+https://developer.mozilla.org/en-US/docs/Web/API/console/trace_static
