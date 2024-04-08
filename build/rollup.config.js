@@ -7,7 +7,8 @@ export default {
     input: 'src/index.js',
     output: {
         file: `public/dist/${packageJSON.name}.js`,
-        format: 'iife'
+        format: 'iife',
+        sourcemap: 'file'
     },
     plugins: [
         clear({targets:['public/dist']}),
