@@ -4,6 +4,7 @@ export function Log (...args) {
     // discussion about localstorage performance
     // discussuon about ree shaking removal and lazy loading lib itself until required
     // todo   considering possible performance issue -> develop lazy LS poller.
+    // https://codesandbox.io/p/sandbox/localstoragevcookies-6w39h?file=%2Fsrc%2Ftest.ts%3A71%2C1
     if (localStorage.libdebug === '1') {
         console.log(...args);
         // we could utilize trace here.
