@@ -42,3 +42,7 @@ npm run dev:lint --fix
 currently we have commented out  web-vitals
 have included sourcemaps in prod build,
 and sourcemaps show misleading info about removed code - seems unbeatable
+
+
+
+https://developer.chrome.com/docs/devtools/developer-resources - good sourcemaps guide
