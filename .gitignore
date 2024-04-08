@@ -2,3 +2,4 @@
 /.env.local
 /LearnBuild.iml
 /node_modules/
+/public/dist/
