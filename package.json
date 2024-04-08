@@ -5,10 +5,13 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "build": "NODE_ENV=prod rollup -c rollup.config.prod.js",
+    "build": "NODE_ENV=prod rollup -c build/build.js",
     "dev:be": "node server/index.js",
-    "dev:fe": "NODE_ENV=dev rollup -c rollup.config.dev.js -w",
+    "dev:fe": "NODE_ENV=dev rollup -c build/serve.dev.js -w",
+    "prod:fe": "NODE_ENV=prod rollup -c build/serve.prod.js -w",
     "dev": "run-p dev:be dev:fe",
+    "start": "run-p dev:be prod:fe",
+    "report": "rollup -c build/report.js",
     "dev:lint": "eslint src/**"
   },
   "author": "",

@@ -1,7 +1,7 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
 import dotenv from "rollup-plugin-dotenv";
 import clear from 'rollup-plugin-clear'
-import packageJSON from './package.json' assert {type: "json"};
+import packageJSON from '../package.json' assert {type: "json"};
 import eslint from '@rollup/plugin-eslint';
 export default {
     input: 'src/index.js',
