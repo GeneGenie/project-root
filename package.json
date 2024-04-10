@@ -12,7 +12,7 @@
     "dev": "run-p dev:be dev:fe",
     "start": "run-p dev:be prod:fe",
     "report": "rollup -c build/report.js",
-    "dev:lint": "eslint src/**"
+    "dev:lint": "eslint src/** build/**"
   },
   "author": "",
   "license": "ISC",

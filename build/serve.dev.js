@@ -1,16 +1,16 @@
-import rollupConfig from './rollup.config.js'
-import serve from "rollup-plugin-serve";
-import livereload from 'rollup-plugin-livereload'
+import rollupConfig from './rollup.config.js';
+import serve from 'rollup-plugin-serve';
+import livereload from 'rollup-plugin-livereload';
 
 export default {
     ...rollupConfig,
-    sourcemap:true,
+    sourcemap: true,
     plugins: [
         ...rollupConfig.plugins,
         livereload(),
         serve({
             port: 3000,
-            contentBase: ['public', 'public/dist'],
+            contentBase: ['public', 'public/dist']
         })
     ]
-}
+};

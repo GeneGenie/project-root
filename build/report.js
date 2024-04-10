@@ -1,8 +1,6 @@
-import rollupConfig from './build.js'
-import { visualizer } from "rollup-plugin-visualizer";
-import { bundleSize } from "./plugins/bundleSize.js";
-
-
+import rollupConfig from './build.js';
+import { visualizer } from 'rollup-plugin-visualizer';
+import { bundleSize } from './plugins/bundleSize.js';
 
 export default {
     ...rollupConfig,
@@ -14,6 +12,6 @@ export default {
             template: 'treemap',
             filename: 'reports/size.html',
             gzipSize: true
-        }),
+        })
     ]
-}
+};

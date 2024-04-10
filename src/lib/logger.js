@@ -17,6 +17,7 @@ export function Log (...args) {
 export function getLogger (name) {
     // now much better
     return {
+
         log: (...args) => Log(`[${name}]`, ...args)
         // todo get here later
         // log: console.log.bind(console, `[${name}]`) // this is working but without localstorage ofcourse

@@ -1,5 +1,5 @@
-import rollupConfig from './build.js'
-import serve from "rollup-plugin-serve";
+import rollupConfig from './build.js';
+import serve from 'rollup-plugin-serve';
 
 export default {
     ...rollupConfig,
@@ -7,7 +7,7 @@ export default {
         ...rollupConfig.plugins,
         serve({
             port: 3000,
-            contentBase: ['public', 'public/dist'],
+            contentBase: ['public', 'public/dist']
         })
     ]
-}
+};
