@@ -16,6 +16,7 @@ export function Log(...args) {
 
 export function getLogger(name) {
     // now much better
+    // look at this minified code, it doesmnt get shaked away;
     return {
         log: (...args) => Log(`[${name}]`, ...args),
         // todo get here later
