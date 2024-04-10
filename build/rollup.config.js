@@ -1,9 +1,8 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
 import dotenv from 'rollup-plugin-dotenv';
 import clear from 'rollup-plugin-clear';
-// eslint-disable-next-line
-import packageJSON from '../package.json' assert { type: 'json' };
 import eslint from '@rollup/plugin-eslint';
+const packageJSON = require('../package.json');
 
 export default {
     input: 'src/index.js',
@@ -14,12 +13,12 @@ export default {
     },
     plugins: [
         clear({ targets: ['public/dist'] }),
+        nodeResolve(),
         eslint({
             exclude: ['node_modules/**', './package.json'],
             throwOnWarning: false,
             throwOnError: true
         }),
-        nodeResolve(),
-        dotenv(),
+        dotenv()
     ]
 };
