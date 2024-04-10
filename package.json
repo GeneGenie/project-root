@@ -39,8 +39,6 @@
   },
   "dependencies": {
     "express": "^4.19.2",
-    "maxmin": "^4.0.0",
-    "pretty-bytes": "^6.1.1",
     "rollup-plugin-dotenv": "^0.5.0",
     "web-vitals": "^3.5.2"
   }
