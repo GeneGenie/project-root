@@ -2,14 +2,16 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import dotenv from 'rollup-plugin-dotenv';
 import clear from 'rollup-plugin-clear';
 import eslint from '@rollup/plugin-eslint';
-const packageJSON = require('../package.json');
+import fs from 'fs';
+
+const packageJSON = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 export default {
     input: 'src/index.js',
     output: {
         file: `public/dist/${packageJSON.name}.js`,
         format: 'iife',
-        sourcemap: 'file'
+        sourcemap: 'file',
     },
     plugins: [
         clear({ targets: ['public/dist'] }),
@@ -17,8 +19,8 @@ export default {
         eslint({
             exclude: ['node_modules/**', './package.json'],
             throwOnWarning: false,
-            throwOnError: true
+            throwOnError: true,
         }),
-        dotenv()
-    ]
+        dotenv(),
+    ],
 };

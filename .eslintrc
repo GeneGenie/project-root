@@ -1,10 +1,18 @@
 {
-  "extends": "standard",
+  "extends": [
+    "standard",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
   "env": {
     "browser": true
   },
   "rules": {
+    "prettier/prettier": "error",
     "indent": [ "error", 4 ],
-    "semi": [ "error", "always" ]
+    "semi": [ "error", "always" ],
+    "comma-dangle": "off"
   }
 }

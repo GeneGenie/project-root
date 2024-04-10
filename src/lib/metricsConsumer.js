@@ -1,13 +1,13 @@
 import { safePost } from './network.js';
 import { Log } from './logger.js';
 
-function sendToAnalytics (metric) {
+function sendToAnalytics(metric) {
     const body = JSON.stringify(metric);
     Log('[Consumer]', 'consumed metric', metric);
     const url = process.env.REPORT_URL;
     safePost(url, body);
 }
 
-export function consumeMetric (metrics) {
+export function consumeMetric(metrics) {
     sendToAnalytics(metrics);
 }

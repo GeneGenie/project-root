@@ -1,6 +1,6 @@
 import { initMetrics } from './modules/metrics.js';
 
-function main () {
+function main() {
     initMetrics();
 }
 

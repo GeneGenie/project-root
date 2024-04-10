@@ -2,7 +2,7 @@ import { getLogger } from './logger.js';
 
 const { log } = getLogger('network');
 
-export function safePost (url, body) {
+export function safePost(url, body) {
     log('send request to', url);
     if (navigator.sendBeacon) {
         navigator.sendBeacon(url, body);
@@ -13,9 +13,8 @@ export function safePost (url, body) {
     log('after send');
 }
 
-function mayFail (promise) {
-    promise
-        .catch(e => {
-            log('failed', e);
-        });
+function mayFail(promise) {
+    promise.catch((e) => {
+        log('failed', e);
+    });
 }

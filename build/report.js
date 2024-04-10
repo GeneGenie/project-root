@@ -11,7 +11,7 @@ export default {
             sourcemap: true,
             template: 'treemap',
             filename: 'reports/size.html',
-            gzipSize: true
-        })
-    ]
+            gzipSize: true,
+        }),
+    ],
 };

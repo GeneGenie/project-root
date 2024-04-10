@@ -7,7 +7,7 @@ export default {
         ...rollupConfig.plugins,
         serve({
             port: 3000,
-            contentBase: ['public', 'public/dist']
-        })
-    ]
+            contentBase: ['public', 'public/dist'],
+        }),
+    ],
 };

@@ -1,5 +1,5 @@
 // this starts from capital only to avoid IDE auto fillilng as console.log"
-export function Log (...args) {
+export function Log(...args) {
     // after tree shaking, all logs get removed from prod build
     if (process.env.NO_LOGS !== '1') {
         // discussion about building in logger
@@ -14,11 +14,10 @@ export function Log (...args) {
     }
 }
 
-export function getLogger (name) {
+export function getLogger(name) {
     // now much better
     return {
-
-        log: (...args) => Log(`[${name}]`, ...args)
+        log: (...args) => Log(`[${name}]`, ...args),
         // todo get here later
         // log: console.log.bind(console, `[${name}]`) // this is working but without localstorage ofcourse
     };
