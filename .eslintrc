@@ -4,7 +4,8 @@
     "prettier"
   ],
   "plugins": [
-    "prettier"
+    "prettier",
+    "local"
   ],
   "env": {
     "browser": true
@@ -13,6 +14,7 @@
     "prettier/prettier": "error",
     "indent": [ "error", 4 ],
     "semi": [ "error", "always" ],
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "local/enforce-debug-prefix": "error"
   }
 }
