@@ -50,3 +50,4 @@ https://developer.chrome.com/docs/devtools/developer-resources - good sourcemaps
 
 
 npm i -D file:eslintLocal/
+https://ronvalstar.nl/custom-local-eslint-rules

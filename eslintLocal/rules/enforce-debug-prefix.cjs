@@ -9,14 +9,18 @@ module.exports = {
                 ) {
                     const parent = node.parent;
                     if (
-                        parent.type !== 'LogicalExpression' ||
-                        parent.operator !== '&&' ||
-                        parent.left.name !== 'LOGS_ENABLED'
+                            parent.type !== 'LogicalExpression' ||
+                            parent.operator !== '&&' ||
+                            parent.left.type !== 'MemberExpression' ||
+                            parent.left.object.type !== 'MemberExpression' ||
+                            parent.left.object.object.name !== 'process' ||
+                            parent.left.object.property.name !== 'env' ||
+                            parent.left.property.name !== 'NO_LOGS'
                     ) {
                         context.report({
                             node,
                             message:
-                                'console.log should be prefixed with LOGS_ENABLED &&',
+                                'console.log should be prefixed with `process.env.NO_LOGS && ` ',
                         });
                     }
                 }
