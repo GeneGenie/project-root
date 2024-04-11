@@ -5,22 +5,19 @@ module.exports = {
             CallExpression(node) {
                 if (
                     (node.callee.type === 'MemberExpression' && node.callee.property.name === 'log') ||
-                    (node.callee.type === 'Identifier' && node.callee.name === 'log')
+                    (node.callee.type === 'CallExpression' && node.callee.name.toLowerCase() === 'log')
                 ) {
                     const parent = node.parent;
                     if (
-                            parent.type !== 'LogicalExpression' ||
-                            parent.operator !== '&&' ||
-                            parent.left.type !== 'MemberExpression' ||
-                            parent.left.object.type !== 'MemberExpression' ||
-                            parent.left.object.object.name !== 'process' ||
-                            parent.left.object.property.name !== 'env' ||
-                            parent.left.property.name !== 'NO_LOGS'
+                        parent.type !== 'LogicalExpression' ||
+                        parent.operator !== '&&' ||
+                        parent.left.type !== 'Identifier' ||
+                        parent.left.name !== 'LOGS'
                     ) {
                         context.report({
                             node,
                             message:
-                                'console.log should be prefixed with `process.env.NO_LOGS && ` ',
+                                'console.log should be prefixed with `process.env.LOGS && ` ',
                         });
                     }
                 }

@@ -3,7 +3,7 @@ import { Log } from './logger.js';
 
 function sendToAnalytics(metric) {
     const body = JSON.stringify(metric);
-    Log('[Consumer]', 'consumed metric', metric);
+    process.env.LOGS && Log('[Consumer]', 'consumed metric', metric);
     const url = process.env.REPORT_URL;
     safePost(url, body);
 }

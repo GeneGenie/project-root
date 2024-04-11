@@ -10,7 +10,7 @@ const opts = { reportAllChanges: false };
 
 export function provideMetrics(onMetricCallback) {
     function wvEventCallback(metric) {
-        Log('[Provider]', 'provided metric', metric);
+        process.env.LOGS && Log('[Provider]', 'provided metric', metric);
         onMetricCallback(metric);
     }
 
