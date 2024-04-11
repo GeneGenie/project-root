@@ -46,3 +46,7 @@ and sourcemaps show misleading info about removed code - seems unbeatable
 
 
 https://developer.chrome.com/docs/devtools/developer-resources - good sourcemaps guide
+
+
+
+npm i -D file:eslintLocal/
