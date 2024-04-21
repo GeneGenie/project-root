@@ -1,11 +1,16 @@
-// enforce-debug-prefix.js
+//https://developers.mews.com/how-to-write-custom-eslint-rules/
 module.exports = {
+    meta: {
+        messages: {
+            forgotDebugPrefix: 'Logs must be prefixed with "LOGS &&" expression`'
+        },
+    },
     create(context) {
         return {
             CallExpression(node) {
                 if (
                     (node.callee.type === 'MemberExpression' && node.callee.property.name === 'log') ||
-                    (node.callee.type === 'CallExpression' && node.callee.name.toLowerCase() === 'log')
+                    (node.callee.type === 'Identifier' && node.callee.name.toLowerCase() === 'log')
                 ) {
                     const parent = node.parent;
                     if (
@@ -16,8 +21,7 @@ module.exports = {
                     ) {
                         context.report({
                             node,
-                            message:
-                                'console.log should be prefixed with `process.env.LOGS && ` ',
+                            messageId: 'forgotDebugPrefix'
                         });
                     }
                 }

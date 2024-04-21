@@ -21,7 +21,7 @@ export function getLogger(name) {
     // and this also doesn't help,
     return {
         log(...args) {
-            process.env.LOGS && Log(`[${name}]`, ...args);
+            LOGS && Log(`[${name}]`, ...args);
         },
         // todo get here later
         // log: console.log.bind(console, `[${name}]`) // this is working but without localstorage ofcourse
