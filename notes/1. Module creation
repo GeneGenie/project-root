@@ -53,3 +53,12 @@ npm i -D file:eslintLocal/
 https://ronvalstar.nl/custom-local-eslint-rules
 https://developers.mews.com/how-to-write-custom-eslint-rules/
 https://astexplorer.net/
+
+
+tests inspiration
+https://saucelabs.com/resources/blog/vitest-vs-jest-comparison
+https://philipwalton.com/articles/how-to-unit-test-private-functions-in-javascript/
+https://philipwalton.com/articles/why-i-test-private-functions-in-javascript/
+https://npmtrends.com/rollup-vs-vite-vs-webpack
+https://npmtrends.com/jest-vs-mocha-vs-vitest
+https://web.dev/learn/testing/welcome
