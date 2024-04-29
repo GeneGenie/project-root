@@ -62,3 +62,15 @@ https://philipwalton.com/articles/why-i-test-private-functions-in-javascript/
 https://npmtrends.com/rollup-vs-vite-vs-webpack
 https://npmtrends.com/jest-vs-mocha-vs-vitest
 https://web.dev/learn/testing/welcome
+
+
+
+Server setup
+ssh keys
+194.146.25.179
+apt install nodejs
+apt install npm
+npm i -g n
+n lts
+hash -r
+npm i -g pm2
