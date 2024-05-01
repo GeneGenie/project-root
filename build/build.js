@@ -25,13 +25,13 @@ export default {
             file: rollupConfig.output[0].file.replace('.js', '.min.js'),
             format: 'iife',
             sourcemap: 'file',
+            plugins: [terser()],
         },
         {
             file: rollupConfig.output[0].file.replace('.js', '.ns.min.js'),
             format: 'iife',
             sourcemap: false,
-            plugins: [removeSourcemapUrl()],
+            plugins: [terser()],
         },
     ],
-    plugins: [...rollupConfig.plugins, terser()],
 };
