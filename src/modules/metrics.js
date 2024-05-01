@@ -3,6 +3,6 @@ import { consumeMetric } from '../lib/metricsConsumer.js';
 import { Log } from '../lib/logger.js';
 
 export function initMetrics() {
-    LOGS && Log('[Metrics]', 'init');
+    APP_LOGS && Log('[Metrics]', 'init');
     provideMetrics(consumeMetric);
 }

@@ -2,7 +2,7 @@
 module.exports = {
     meta: {
         messages: {
-            forgotDebugPrefix: 'Logs must be prefixed with "LOGS &&" expression`'
+            forgotDebugPrefix: 'Logs must be prefixed with "APP_LOGS &&" expression`'
         },
     },
     create(context) {
@@ -17,7 +17,7 @@ module.exports = {
                         parent.type !== 'LogicalExpression' ||
                         parent.operator !== '&&' ||
                         parent.left.type !== 'Identifier' ||
-                        parent.left.name !== 'LOGS'
+                        parent.left.name !== 'APP_LOGS'
                     ) {
                         context.report({
                             node,

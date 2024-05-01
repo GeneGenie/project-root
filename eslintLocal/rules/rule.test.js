@@ -4,13 +4,13 @@ const ruleTester = new RuleTester();
 ruleTester.run('no-empty-catch', logPrefixRule, {
     valid: [
         {
-            code: 'LOGS && Log("yo");',
+            code: 'APP_LOGS && Log("yo");',
         },
         {
-            code: 'LOGS && console.log("yo");',
+            code: 'APP_LOGS && console.log("yo");',
         },
         {
-            code: 'LOGS && log("yo");',
+            code: 'APP_LOGS && log("yo");',
         },
     ],
     invalid: [
