@@ -8,11 +8,13 @@ const packageJSON = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 export default {
     input: 'src/index.js',
-    output: {
-        file: `public/dist/${packageJSON.name}.js`,
-        format: 'iife',
-        sourcemap: 'file',
-    },
+    output: [
+        {
+            file: `public/dist/${packageJSON.name}.js`,
+            format: 'iife',
+            sourcemap: 'file',
+        },
+    ],
     plugins: [
         clear({ targets: ['public/dist'] }),
         nodeResolve(),

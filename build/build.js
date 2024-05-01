@@ -19,5 +19,19 @@ function removeSourcemapUrl() {
 }
 export default {
     ...rollupConfig,
-    plugins: [...rollupConfig.plugins, terser(), removeSourcemapUrl()],
+    output: [
+        ...rollupConfig.output,
+        {
+            file: rollupConfig.output[0].file.replace('.js', '.min.js'),
+            format: 'iife',
+            sourcemap: 'file',
+        },
+        {
+            file: rollupConfig.output[0].file.replace('.js', '.ns.min.js'),
+            format: 'iife',
+            sourcemap: false,
+            plugins: [removeSourcemapUrl()],
+        },
+    ],
+    plugins: [...rollupConfig.plugins, terser()],
 };
