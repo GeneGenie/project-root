@@ -11,7 +11,8 @@
     "browser": true
   },
   "globals": {
-    "APP_LOGS": true
+    "APP_LOGS": true,
+    "APP_REPORT_URL": true
   },
   "rules": {
     "prettier/prettier": "error",
