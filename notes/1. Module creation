@@ -84,3 +84,20 @@ http://r1.com:3001/learnbuild.js
 
 and we want to provide several entries
 now we want to protect sourcemaps on our server
+
+
+
+
+
+
+Review sourcemaps and bundling
+
+https://www.npmjs.com/package/source-map-explorer
+https://www.npmjs.com/package/rollup-plugin-bundle-stats
+https://www.npmjs.com/package/rollup-plugin-analyzer
+
+
+
+
+logging
+https://www.redbitdev.com/post/conditional-logging-to-the-javascript-console

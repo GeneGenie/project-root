@@ -22,9 +22,10 @@ function getEnvVariablesTyped() {
     }, {});
 }
 
-export function replaceEnvVariables() {
+export function replaceEnvVariables(opts) {
     return replace({
         ...getEnvVariablesTyped(),
+        ...opts,
         preventAssignment: true,
     });
 }
