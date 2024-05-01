@@ -18,7 +18,7 @@ export default entries.map((entry) => {
                 file: `public/dist/${packageJSON.name}-${entry}`,
                 format: 'iife',
                 sourcemap: 'file',
-                name: `${packageJSON.name}${capitalize(entry.replace('.js', ''))}`,
+                name: `${packageJSON.name}.${capitalize(entry.replace('.js', ''))}`,
             },
         ],
         plugins: [
