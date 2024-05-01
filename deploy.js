@@ -17,6 +17,7 @@ export async function deploy() {
     await copyToRemote();
     const remoteJobRunner = await RemoteJob();
     await remoteJobRunner.updateModules();
+    // requires first initial run on server
     await remoteJobRunner.rerunPm2();
 
     remoteJobRunner.end();
@@ -44,12 +45,14 @@ async function RemoteJob() {
     }
 
     function updateModules() {
-        return runCommand('npm install --omit=dev');
+        return runCommand('NODE_ENV=production npm install');
     }
 
     function rerunPm2(pm2Name) {
         pm2Name = pm2Name || PACKAGE_NAME;
-        return runCommand(`pm2 restart ${pm2Name}`);
+        return runCommand(
+            `NODE_ENV=production pm2 restart ./server/index.js --name ${pm2Name}`,
+        );
     }
 
     const api = {
