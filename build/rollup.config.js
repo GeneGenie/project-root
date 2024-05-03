@@ -7,7 +7,7 @@ import strip from '@rollup/plugin-strip';
 const packageJSON = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 const entryDir = 'src/entrypoints';
-let entries = fs
+const entries = fs
     .readdirSync(entryDir)
     .map((file) => {
         return file;

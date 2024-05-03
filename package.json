@@ -12,7 +12,10 @@
     "dev": "run-p dev:be dev:fe",
     "start": "run-p dev:be prod:fe",
     "report": "rollup -c build/report.js",
-    "lint": "eslint src/** build/** --rulesdir eslintLocal"
+    "lint": "eslint src/** build/**",
+    "predeploy": "run-s lint build",
+    "deploy": "node deploy.js"
+
   },
   "author": "",
   "license": "ISC",
