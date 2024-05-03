@@ -3,6 +3,7 @@ import clear from 'rollup-plugin-clear';
 import eslint from '@rollup/plugin-eslint';
 import fs from 'fs';
 import { replaceEnvVariables } from './plugins/replaceEnvVariables.js';
+import alias from '@rollup/plugin-alias';
 
 const packageJSON = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
@@ -28,7 +29,12 @@ let entries = fs
                 ],
                 plugins: [
                     clear({ targets: ['public/dist'] }),
-                    replaceEnvVariables({ APP_LOGS: hasLogs }),
+                    // replaceEnvVariables({ APP_LOGS: hasLogs }),
+                    alias({
+                        entries: {
+                            logger: '../lib/logger_empty.js',
+                        },
+                    }),
                     nodeResolve(),
                     eslint({
                         exclude: ['node_modules/**', './package.json'],
