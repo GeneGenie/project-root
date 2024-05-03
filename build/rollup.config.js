@@ -2,12 +2,8 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import clear from 'rollup-plugin-clear';
 import eslint from '@rollup/plugin-eslint';
 import fs from 'fs';
-import {
-    getEnvVariablesTyped,
-    replaceEnvVariables,
-} from './plugins/replaceEnvVariables.js';
+import { replaceEnvVariables } from './plugins/replaceEnvVariables.js';
 import strip from '@rollup/plugin-strip';
-const env = getEnvVariablesTyped();
 const packageJSON = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 const entryDir = 'src/entrypoints';
@@ -32,9 +28,9 @@ let entries = fs
                 ],
                 plugins: [
                     clear({ targets: ['public/dist'] }),
-                    // replaceEnvVariables({ APP_LOGS: hasLogs }),
+                    replaceEnvVariables(),
                     // https://www.npmjs.com/package/@rollup/plugin-strip
-                    hasLogs &&
+                    !hasLogs &&
                         strip({
                             debugger: true,
                             functions: ['logger.log', 'log', 'Log', 'Log.bind'],
