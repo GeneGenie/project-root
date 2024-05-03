@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 dotenv.config({ path: envFiles });
 
-function getEnvVariablesTyped() {
+export function getEnvVariablesTyped() {
     return Object.keys(process.env).reduce((acc, key) => {
         if (key.startsWith('APP_')) {
             let value = process.env[key];
