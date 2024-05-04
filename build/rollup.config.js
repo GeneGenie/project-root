@@ -20,7 +20,7 @@ const entries = fs
                 input: [`src/entrypoints/${entry}`],
                 output: [
                     {
-                        file: `public/dist/${packageJSON.name}${!hasLogs ? '.nl' : ''}.${entry}`,
+                        file: `public/dist/${packageJSON.name}${hasLogs ? '.wl' : ''}.${entry}`,
                         format: 'iife',
                         sourcemap: 'file',
                         name: `${packageJSON.name}.${capitalize(entry.replace('.js', ''))}`,
