@@ -10,7 +10,7 @@
     }
   },
   "scripts": {
-    "preinstall": "mkdir dist && ln -sf `pwd`/dist ./public/dist",
+    "preinstall": "mkdir -p dist && ln -sf `pwd`/dist ./public/dist",
     "build": "NODE_ENV=production rollup -c build/build.js",
     "dev:be": "node server/index.js",
     "dev:fe": "NODE_ENV=dev rollup -c build/serve.dev.js -w",
