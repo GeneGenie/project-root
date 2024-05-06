@@ -1,6 +1,6 @@
 {
   "name": "learnbuild",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "template project for a lib",
   "type": "module",
   "main": "src/index.js",
