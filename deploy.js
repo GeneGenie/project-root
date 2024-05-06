@@ -8,19 +8,25 @@ const packageInfo = JSON.parse(
 );
 
 const PACKAGE_NAME = packageInfo.name;
+const PACKAGE_VERSION = packageInfo.version;
 const HOST = '194.146.25.179';
 const USER = 'root';
 const KEY_PATH = path.resolve('/Users/moroz/.ssh/id_rsa');
 const DEST_CWD = `/root/${PACKAGE_NAME}`;
 
 export async function deploy() {
-    await copyToRemote();
+    await deployServer();
+    await Promise.all([copyClient('latest'), copyClient(PACKAGE_VERSION)]);
+}
+
+async function deployServer() {
+    await copyServer();
     const remoteJobRunner = await RemoteJob();
     await remoteJobRunner.updateModules();
     // requires first initial run on server
     await remoteJobRunner.rerunPm2();
 
-    remoteJobRunner.end();
+    return remoteJobRunner.end();
 }
 
 // https://dev.to/somedood/the-proper-way-to-write-async-constructors-in-javascript-1o8c
@@ -64,15 +70,18 @@ async function RemoteJob() {
 
     return api;
 }
-
-function copyToRemote() {
+function copyServer() {
+    return copyToRemote(['./server', './public', './package.json']);
+}
+function copyClient(version) {
+    return copyToRemote(['./dist'], `/public/${version}`);
+}
+function copyToRemote(sources, destinationSubPath = '') {
     const rsync = new Rsync()
         .set('rsh', `ssh -i ${KEY_PATH}`)
         .flags('az')
-        .source('./server')
-        .source('./public')
-        .source('./package.json')
-        .destination(`${USER}@${HOST}:${DEST_CWD}`);
+        .source(sources)
+        .destination(`${USER}@${HOST}:${DEST_CWD}${destinationSubPath}`);
 
     return new Promise((resolve, reject) => {
         rsync.execute((error, code, cmd) => {
