@@ -24,12 +24,12 @@ const entries = fs
                         format: 'iife',
                         sourcemap: 'file',
                         name: `${packageJSON.name}.${capitalize(entry.replace('.js', ''))}`,
+                        banner: `//! v${packageJSON.version} - ${new Date().toUTCString()}`,
                     },
                 ],
                 plugins: [
                     clear({ targets: ['public/dist'] }),
                     replaceEnvVariables(),
-                    // https://www.npmjs.com/package/@rollup/plugin-strip
                     !hasLogs &&
                         strip({
                             debugger: true,
