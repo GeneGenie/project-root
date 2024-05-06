@@ -40,6 +40,7 @@ async function RemoteJob() {
     });
 
     async function runCommand(command) {
+        console.log('Running remote command:', command);
         const { stdout, stderr } = await ssh.execCommand(command, {
             cwd: DEST_CWD,
         });
@@ -74,7 +75,7 @@ function copyServer() {
     return copyToRemote(['./server', './public', './package.json']);
 }
 function copyClient(version) {
-    return copyToRemote(['./dist'], `/public/${version}`);
+    return copyToRemote(['./dist/'], `/public/${version}`);
 }
 function copyToRemote(sources, destinationSubPath = '') {
     const rsync = new Rsync()
