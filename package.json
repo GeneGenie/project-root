@@ -4,8 +4,11 @@
   "description": "template project for a lib",
   "type": "module",
   "main": "src/index.js",
-  "npm": {
-    "publish": false
+  "release-it": {
+    "npm": {
+      "publish": false,
+      "skipChecks": true
+    }
   },
   "scripts": {
     "preinstall": "pwd; mkdir -p $/dist && ln -sf `pwd`/dist ./public/dist",
@@ -17,7 +20,7 @@
     "start": "run-p dev:be prod:fe",
     "report": "rollup -c build/report.js",
     "lint": "eslint src/** build/**",
-    "release": "release-it",
+    "release": "release-it ",
     "predeploy": "run-s lint build release",
     "deploy": "node deploy.js"
   },
