@@ -4,6 +4,9 @@
   "description": "template project for a lib",
   "type": "module",
   "main": "src/index.js",
+  "npm": {
+    "publish": false
+  },
   "scripts": {
     "preinstall": "pwd; mkdir -p $/dist && ln -sf `pwd`/dist ./public/dist",
     "build": "NODE_ENV=production rollup -c build/build.js",
