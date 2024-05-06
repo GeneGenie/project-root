@@ -9,10 +9,10 @@ const packageInfo = JSON.parse(
 
 const PACKAGE_NAME = packageInfo.name;
 const PACKAGE_VERSION = packageInfo.version;
-const HOST = '194.146.25.179';
-const USER = 'root';
-const KEY_PATH = path.resolve('/Users/moroz/.ssh/id_rsa');
-const DEST_CWD = `/root/${PACKAGE_NAME}`;
+const REMOTE_HOST = 'r1.com';
+const REMOTE_USER = 'root';
+const KEY_PATH = path.resolve(`${process.env.HOME}/.ssh/id_rsa`);
+const DEST_CWD = `/${REMOTE_USER}/${PACKAGE_NAME}`;
 
 export async function deploy() {
     await deployServer();
@@ -34,8 +34,8 @@ async function deployServer() {
 async function RemoteJob() {
     const ssh = new NodeSSH();
     await ssh.connect({
-        host: HOST,
-        username: USER,
+        host: REMOTE_HOST,
+        username: REMOTE_USER,
         privateKeyPath: KEY_PATH,
     });
 
@@ -81,7 +81,9 @@ function copyToRemote(sources, destinationSubPath = '') {
         .set('rsh', `ssh -i ${KEY_PATH}`)
         .flags('az')
         .source(sources)
-        .destination(`${USER}@${HOST}:${DEST_CWD}${destinationSubPath}`);
+        .destination(
+            `${REMOTE_USER}@${REMOTE_HOST}:${DEST_CWD}${destinationSubPath}`,
+        );
 
     return new Promise((resolve, reject) => {
         rsync.execute((error, code, cmd) => {
