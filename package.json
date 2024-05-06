@@ -17,7 +17,7 @@
     "start": "run-p dev:be prod:fe",
     "report": "rollup -c build/report.js",
     "lint": "eslint src/** build/**",
-    "release": "release-it --no-npm",
+    "release": "release-it",
     "predeploy": "run-s lint build release",
     "deploy": "node deploy.js"
   },
