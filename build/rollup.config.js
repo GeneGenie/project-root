@@ -33,7 +33,13 @@ const entries = fs
                     !hasLogs &&
                         strip({
                             debugger: true,
-                            functions: ['logger.log', 'log', 'Log', 'Log.bind'],
+                            functions: [
+                                'logger.log',
+                                'console.log.bind',
+                                'Log',
+                                'Log.bind',
+                                'getLogger',
+                            ],
                         }),
                     nodeResolve(),
                     eslint({
